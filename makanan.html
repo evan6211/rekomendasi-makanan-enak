@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makanan</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Pastikan file CSS terhubung dengan benar -->
+    <head>
+    <!-- Link Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Makan</a></li>
+                <li><a href="minum.html">Minum</a></li>
+            </ul>
+            <!-- Tombol menu toggle untuk tampilan mobile -->
+            <button class="menu-toggle">&#9776;</button> <!-- Hamburger Icon -->
+        </div>
+    </nav>
+   <!-- Header -->
+    <header>
+        <h1>Selamat Datang di Menu Makan</h1>
+        <p class="typing-text">Temukan makanan terbaik di sini...</p>
+    </header>
+
+    <!-- Section Konten Makan -->
+    <section class="content">
+        <div class="card food">
+            <img src="pizza.jpg" alt="Makanan 1">
+            <h3>Pizza Margherita</h3>
+            <p>Pizza dengan saus tomat dan keju mozzarella, cocok untuk santapan bersama keluarga atau teman-teman!</p>
+        </div>
+        <div class="card food">
+            <img src="sushi.jpg" alt="Makanan 2">
+            <h3>Sushi Rolls</h3>
+            <p>Roll sushi dengan bahan-bahan segar, pilihan sempurna untuk pencinta masakan Jepang.</p>
+        </div>
+        <div class="card food">
+            <img src="burger.jpg" alt="Makanan 3">
+            <h3>Burger Daging</h3>
+            <p>Hamburger lezat dengan daging sapi segar, sangat cocok untuk makan siang atau malam.</p>
+        </div>
+    </section>
+        </div>
+    </section>
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 rekomendasi makanan. dibuat oleh evan.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yhvanda" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@evanda_3008" target="_blank" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@VanXplore" target="_blank" class="social-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelector('.social-icon').addEventListener('click', function(e) {
+        var url = e.target.href;
+        var appUrl = url.replace('https://www.instagram.com', 'instagram://user?username=yourprofile');
+
+        window.location = appUrl;
+
+        setTimeout(function() {
+            window.location = url;
+        }, 1000); // Jika aplikasi tidak terpasang, fallback ke link web setelah 1 detik
+    });
+</script>
+     <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+nav {
+    background: #2c3e50; /* Warna biru gelap elegan */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #1a252f; /* Border bawah navbar */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.menu-toggle:hover {
+    background: #34495e;
+    transform: scale(1.1);
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    background: #34495e; /* Warna menu lebih terang dari navbar */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #2c3e50; /* Border agar terlihat terpisah */
+}
+
+/* Animasi Dropdown */
+.menu.active {
+    display: flex;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tambahkan delay animasi pada item */
+.menu li {
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efek Hover & Active */
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 12px 20px;
+    transition: background 0.3s, transform 0.2s;
+    border: 2px solid transparent; /* Awalnya border transparan */
+    border-radius: 8px;
+}
+
+/* Efek hover */
+.menu li a:hover {
+    background: #1abc9c; /* Warna hijau toska */
+    color: white;
+    transform: scale(1.05);
+    border: 2px solid #16a085; /* Border hijau lebih gelap */
+}
+
+/* Efek ketika tombol ditekan (active) */
+.menu li a:active {
+    background: #e74c3c; /* Warna merah soft */
+    border: 2px solid #c0392b;
+}
+
+/* Responsif: Menu tampil horizontal di layar besar */
+@media (min-width: 768px) {
+    .menu {
+        position: static;
+        background: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        border: none;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: #34495e; /* Gelap tapi terang, serasi */
+    color: white;
+    border: solid 2px #2c3e50;
+  
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Section Content */
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+    background: #2c3e50; /* Warna latar belakang terang yang menenangkan */
+}
+
+/* Card Styling */
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ecf0f1; /* Sesuaikan dengan warna background */
+    border: 2px solid #bdc3c7; /* Border ringan agar kartu tetap terlihat */
+    overflow: hidden; /* Agar gambar tidak melampaui batas kartu */
+}
+
+/* Gambar dalam kartu */
+.card img {
+    width: 100%; /* Sesuaikan gambar dengan lebar kartu */
+    height: auto; /* Sesuaikan tinggi gambar dengan rasio */
+    border-radius: 8px; /* Agar gambar memiliki sudut melengkung */
+    margin-bottom: 15px; /* Spasi antara gambar dan teks */
+}
+
+/* Warna kartu makanan & minuman */
+.food {
+    background: #34495e; /* Kuning keemasan */
+    border: 2px solid #7393B3; /* Border orange */
+    color: white;
+}
+
+.drink {
+    background:#34495e ; /* Hijau toska */
+    border: 2px solid #7393B3; /* Border hijau terang */
+    color: white;
+}
+
+/* Efek hover dan klik */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #16a085;
+}
+
+/* Animasi teks ketik */
+.typing-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Footer */
+footer {
+  height: 18vh;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Footer content */
+.footer-content p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Social media icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 30px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #1abc9c; /* Warna hijau toska ketika hover */
+}
+
+/* Responsif untuk ikon */
+@media (max-width: 768px) {
+    .social-icon {
+        font-size: 25px;
+        margin: 0 10px;
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minuman</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Pastikan file CSS terhubung dengan benar -->
+    <head>
+    <!-- Link Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="makanan.html">Makan</a></li>
+                <li><a href="#">Minum</a></li>
+            </ul>
+            <!-- Tombol menu toggle untuk tampilan mobile -->
+            <button class="menu-toggle">&#9776;</button> <!-- Hamburger Icon -->
+        </div>
+    </nav>
+     <!-- Header -->
+    <header>
+        <h1>Selamat Datang di Menu Minuman</h1>
+        <p class="typing-text">Pilih minuman favoritmu di bawah...</p>
+    </header>
+
+    <!-- Section Konten Minuman -->
+    <section class="content">
+        <div class="card drink">
+            <img src="es_teh.jpg" alt="Minuman 1">
+            <h3>Es Teh Manis</h3>
+            <p>Es teh manis segar, cocok untuk menyegarkan dahaga di siang hari.</p>
+        </div>
+        <div class="card drink">
+            <img src="jus_jeruk.webp" alt="Minuman 2">
+            <h3>Jus Jeruk Segar</h3>
+            <p>Jus jeruk segar yang kaya vitamin C, nikmat untuk memulai hari.</p>
+        </div>
+        <div class="card drink">
+            <img src="kopi.jpg" alt="Minuman 3">
+            <h3>Cappuccino</h3>
+            <p>Cappuccino dengan rasa kopi yang lembut dan krim yang lembut di atasnya.</p>
+        </div>
+    </section>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 rekomendasi makanan. dibuat oleh evan.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yhvanda" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@evanda_3008" target="_blank" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@VanXplore" target="_blank" class="social-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelector('.social-icon').addEventListener('click', function(e) {
+        var url = e.target.href;
+        var appUrl = url.replace('https://www.instagram.com', 'instagram://user?username=yourprofile');
+
+        window.location = appUrl;
+
+        setTimeout(function() {
+            window.location = url;
+        }, 1000); // Jika aplikasi tidak terpasang, fallback ke link web setelah 1 detik
+    });
+</script>
+     <script src="script.js"></script>
+</body>
+</html>
